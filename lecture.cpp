@@ -15,39 +15,41 @@ public:
   {
   }
 
-  int getAvg()
+  int getAvg() const
   {
     return m_avg;
   }
 
-  int getID()
+  int getID() const
   {
     return m_id;
   }
 
-  std::string getFirst()
+  std::string getFirst() const
   {
     return m_first;
   }
 
-  std::string getLast()
+  std::string getLast() const
   {
     return m_last;
+  }
+
+  void print() const
+  {
+    std::cout << m_first << " " << m_last << " ";
+    std::cout << m_id << " " << m_avg << "\n";
   }
 };
 
 int main(int argc, char *argv[])
 {
 
-  std::vector<float> vec;
-  vec.push_back(34.9f);
-  vec.push_back(12.2f);
-  vec.push_back(22.2f);
-
-  for (auto a : vec)
-  {
-    std::cout << a << "\n";
-  }
+  Student s1;
+  Student s2("John", "Doe", 1, 3.14);
+  const Student s3("Jane", "Doe", 202212, 99.9);
+  s2.print();
+  s3.print();
 
   return 0;
 }
