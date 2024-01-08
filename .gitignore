@@ -34,3 +34,5 @@
 .vscode
 .lecture
 .letcure.dSYM
+
+.DS_Store
