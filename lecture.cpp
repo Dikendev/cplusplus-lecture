@@ -1,65 +1,17 @@
 #include <iostream>
 
-void pp(int &i)
-{
-  std::cout << &i << " " << i << " " << sizeof(i) << "\n";
-}
-
-template <typename T>
-class DynamicArray
-{
-  size_t m_size;
-  T *m_arr;
-
-public:
-  DynamicArray(size_t size) : m_size(size), m_arr(new T[size])
-  {
-    std::cout << "Array Constructor\n";
-  }
-
-  ~DynamicArray()
-  {
-    delete[] m_arr;
-    std::cout << "Array Destructor\n";
-  }
-
-  T get(size_t index) const
-  {
-    return m_arr[index];
-  }
-
-  void set(size_t index, T val)
-  {
-    m_arr[index] = val;
-  }
-
-  void print() const
-  {
-    for (size_t i = 0; i < m_size; i++)
-    {
-      std::cout << i << " " << m_arr[i] << "\n";
-    }
-  }
-
-  const T &operator[](size_t index) const
-  {
-    return m_arr[index];
-  }
-
-  T &operator[](size_t index)
-  {
-    return m_arr[index];
-  }
-};
-
 int main(int argc, char *argv[])
 {
-  DynamicArray<float> myArray(10);
 
-  myArray[2] = 17;
+  enum Color
+  {
+    BLUE,
+    BLACK,
+    RED
+  };
 
-  std::cout << myArray[2] << "\n";
-  myArray.print();
+  Color paint = BLUE;
+  std::cout << "Color selected is : " << paint;
 
   return 0;
 }
