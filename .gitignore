@@ -32,7 +32,6 @@
 *.app
 
 .vscode
-.lecture
-.letcure.dSYM
-
+*lecture
+*lecture.dSYM
 .DS_Store
